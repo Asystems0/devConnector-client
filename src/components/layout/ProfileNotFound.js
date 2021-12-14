@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
-const NotFoundProfile = () => (
+const ProfileNotFound = () => (
   <Fragment>
     <Spinner />
     <h4 style={{ textalign: "center" }}>User Not Created Profile</h4>
@@ -12,4 +12,4 @@ const NotFoundProfile = () => (
   </Fragment>
 );
 
-export default NotFoundProfile;
+export default ProfileNotFound;

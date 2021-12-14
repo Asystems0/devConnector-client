@@ -9,7 +9,7 @@ import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
 import ProfileEducation from "./ProfileEducation";
 import ProfileGithub from "./ProfileGithub";
-import NotFoundProfile from "../layout/NotFoundProfile";
+import ProfileNotFound from "../layout/ProfileNotFound";
 
 const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
   const { id } = useParams();
@@ -20,7 +20,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
   return (
     <section className="container">
       {profile === null || loading ? (
-        <NotFoundProfile />
+        <ProfileNotFound />
       ) : (
         <Fragment>
           <Link to="/profiles" className="btn btn-light">
