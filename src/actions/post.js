@@ -1,3 +1,4 @@
+import api from "../utils/api";
 import axios from "axios";
 
 import { setAlert } from "./alert";
@@ -84,13 +85,8 @@ export const deletePost = (id) => async (dispatch) => {
 
 // Add post
 export const addPost = (formData) => async (dispatch) => {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   try {
-    const res = await axios.post("/api/posts", formData, config);
+    const res = await axios.post("/api/posts", formData);
 
     dispatch({
       type: ADD_POST,
@@ -125,17 +121,8 @@ export const getPost = (id) => async (dispatch) => {
 
 // Add comment
 export const addComment = (postId, formData) => async (dispatch) => {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   try {
-    const res = await axios.post(
-      `/api/posts/comment/${postId}`,
-      formData,
-      config
-    );
+    const res = await axios.post(`/api/posts/comment/${postId}`, formData);
 
     dispatch({
       type: ADD_COMMENT,
