@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const myServer = `${process.env.BASEURL}/api`;
-export default axios.create({
-  baseURL: myServer || "http://localhost:3000/api",
+const api = axios.create({
+  baseURL: process.env.BASEURL || "http://localhost:3000/api",
   headers: {
     // "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
   },
 });
+
+export default api;
