@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
 }

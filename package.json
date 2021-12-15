@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://developor.herokuapp.com/",
   "dependencies": {
     "axios": "^0.24.0",
     "moment": "^2.29.1",
