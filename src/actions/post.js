@@ -16,7 +16,7 @@ import {
 // Get posts
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get("/api/posts");
+    const res = await axios.get("https://developor.herokuapp.com/api/posts");
 
     dispatch({
       type: GET_POSTS,
@@ -33,7 +33,9 @@ export const getPosts = () => async (dispatch) => {
 // Add like
 export const addLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/like/${id}`);
+    const res = await axios.put(
+      `https://developor.herokuapp.com/api/posts/like/${id}`
+    );
 
     dispatch({
       type: UPDATE_LIKES,
@@ -50,7 +52,9 @@ export const addLike = (id) => async (dispatch) => {
 // Remove like
 export const removeLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/unlike/${id}`);
+    const res = await axios.put(
+      `https://developor.herokuapp.com/api/posts/unlike/${id}`
+    );
 
     dispatch({
       type: UPDATE_LIKES,
@@ -67,7 +71,7 @@ export const removeLike = (id) => async (dispatch) => {
 // Delete post
 export const deletePost = (id) => async (dispatch) => {
   try {
-    await axios.delete(`/api/posts/${id}`);
+    await axios.delete(`https://developor.herokuapp.com/api/posts/${id}`);
 
     dispatch({
       type: DELETE_POST,
@@ -86,7 +90,10 @@ export const deletePost = (id) => async (dispatch) => {
 // Add post
 export const addPost = (formData) => async (dispatch) => {
   try {
-    const res = await axios.post("/api/posts", formData);
+    const res = await axios.post(
+      "https://developor.herokuapp.com/api/posts",
+      formData
+    );
 
     dispatch({
       type: ADD_POST,
@@ -105,7 +112,9 @@ export const addPost = (formData) => async (dispatch) => {
 // Get post
 export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/posts/${id}`);
+    const res = await axios.get(
+      `https://developor.herokuapp.com/api/posts/${id}`
+    );
 
     dispatch({
       type: GET_POST,
@@ -122,7 +131,10 @@ export const getPost = (id) => async (dispatch) => {
 // Add comment
 export const addComment = (postId, formData) => async (dispatch) => {
   try {
-    const res = await axios.post(`/api/posts/comment/${postId}`, formData);
+    const res = await axios.post(
+      `https://developor.herokuapp.com/api/posts/comment/${postId}`,
+      formData
+    );
 
     dispatch({
       type: ADD_COMMENT,
@@ -141,7 +153,9 @@ export const addComment = (postId, formData) => async (dispatch) => {
 // Delete comment
 export const deleteComment = (postId, commentId) => async (dispatch) => {
   try {
-    await axios.delete(`/api/posts/comment/${postId}/${commentId}`);
+    await axios.delete(
+      `https://developor.herokuapp.com/api/posts/comment/${postId}/${commentId}`
+    );
 
     dispatch({
       type: REMOVE_COMMENT,

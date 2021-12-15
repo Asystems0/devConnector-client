@@ -1,5 +1,4 @@
 import axios from "axios";
-import api from "../utils/api";
 
 import {
   REGISTER_SUCCES,
@@ -21,7 +20,7 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await api.get("api/auth");
+    const res = await axios.get("https://developor.herokuapp.com/api/auth");
 
     dispatch({
       type: USER_LOADED,
@@ -46,7 +45,11 @@ export const register =
     const body = JSON.stringify({ name, email, password });
 
     try {
-      const res = await api.post("/api/users", body, config);
+      const res = await axios.post(
+        "https://developor.herokuapp.com/api/users",
+        body,
+        config
+      );
 
       dispatch({
         type: REGISTER_SUCCES,
@@ -77,7 +80,11 @@ export const login = (email, password) => async (dispatch) => {
   const body = JSON.stringify({ email, password });
 
   try {
-    const res = await api.post("/api/auth", body, config);
+    const res = await axios.post(
+      "https://developor.herokuapp.com/api/auth",
+      body,
+      config
+    );
 
     dispatch({
       type: LOGIN_SUCCES,
