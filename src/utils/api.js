@@ -1,9 +1,10 @@
 import axios from "axios";
 
+const myServer = `${process.env.BASEURL}/api`;
 export default axios.create({
-  baseURL: "https://developor.herokuapp.com/api",
+  baseURL: myServer || "http://localhost:3000/api",
   headers: {
-    "Access-Control-Allow-Origin": "*",
+    // "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
   },
 });
